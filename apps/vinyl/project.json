@@ -1,0 +1,85 @@
+{
+  "name": "vinyl",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "vinyl-mono",
+  "sourceRoot": "apps/vinyl/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/vinyl",
+        "index": "apps/vinyl/src/index.html",
+        "browser": "apps/vinyl/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/vinyl/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/vinyl/src/favicon.ico", "apps/vinyl/src/assets"],
+        "styles": ["apps/vinyl/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/vinyl/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/vinyl/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "vinyl:build:production"
+        },
+        "development": {
+          "buildTarget": "vinyl:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "vinyl:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/vinyl/**/*.ts", "apps/vinyl/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/vinyl/jest.config.ts"
+      }
+    }
+  }
+}
