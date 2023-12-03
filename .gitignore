@@ -41,3 +41,4 @@ Thumbs.db
 .nx/cache
 .angular
 .vscode
+libs/records/src/environment.prod.ts

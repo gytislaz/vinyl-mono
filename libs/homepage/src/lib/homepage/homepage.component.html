@@ -1,1 +1,10 @@
-<vinyl-mono-navigation-bar></vinyl-mono-navigation-bar>
+<nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full">
+  <div class="mb-2 sm:mb-0">
+    <button (click)="changeType(WISHLIST)" class="font-bold text-3xl">Vinyl</button>
+  </div>
+  <div>
+    <button [class.selected]="selectedType === WISHLIST" (click)="changeType(WISHLIST)" class="text-lg ml-2">Wishlist</button>
+    <button [class.selected]="selectedType === COLLECTION" (click)="changeType(COLLECTION)"class="text-lg ml-2">Collection</button>
+  </div>
+</nav>
+<vinyl-mono-records [records]="selectedType === WISHLIST ? wishlistRecords : collectionRecords"></vinyl-mono-records>

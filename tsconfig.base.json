@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vinyl-mono/homepage": ["libs/homepage/src/index.ts"]
+      "@vinyl-mono/homepage": ["libs/homepage/src/index.ts"],
+      "@vinyl-mono/records": ["libs/records/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
