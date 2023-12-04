@@ -1,4 +1,4 @@
-export enum recordType {
+export enum recordsType {
    WISHLIST = 'collection/folders/6575551/releases',
    COLLECTION = 'collection/folders/6576124/releases'
 }

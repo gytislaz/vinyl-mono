@@ -7,4 +7,4 @@
     <button [class.selected]="selectedType === COLLECTION" (click)="changeType(COLLECTION)"class="text-lg ml-2">Collection</button>
   </div>
 </nav>
-<vinyl-mono-records [records]="selectedType === WISHLIST ? wishlistRecords : collectionRecords"></vinyl-mono-records>
+<vinyl-mono-records [records]="selectedType === WISHLIST ? wishlistRecords : collectionRecords" [pageTitle]="selectedType === WISHLIST ? 'My Wishlist' : 'My Collection'"></vinyl-mono-records>

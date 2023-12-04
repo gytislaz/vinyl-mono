@@ -11,6 +11,8 @@ import { Records } from '../../types';
 })
 export class RecordsComponent {
   @Input() records: Records = {}
+  @Input() pageTitle: string = ''
+
   constructor() {
     console.log(this.records);
   }
