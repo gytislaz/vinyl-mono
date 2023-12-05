@@ -24,7 +24,7 @@ export interface Release {
   instance_id?:       number;
   date_added?:        Date;
   rating?:            number;
-  basic_information?: BasicInformation;
+  basic_information: BasicInformation;
   folder_id?:         number;
 }
 
@@ -38,7 +38,7 @@ export interface BasicInformation {
   title?:        string;
   year?:         number;
   formats?:      Format[];
-  artists?:      Artist[];
+  artists:      Artist[];
   labels?:       Label[];
   genres?:       string[];
   styles?:       string[];
