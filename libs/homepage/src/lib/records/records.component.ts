@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnChanges } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Records, Release } from '../../types';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   selector: 'vinyl-mono-records',
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './records.component.html',
   styleUrl: './records.component.css',
 })
