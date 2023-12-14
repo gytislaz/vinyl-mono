@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import { TOKEN } from '../environment.prod';
 import { Records, recordsType } from '../types';
 
 @Injectable({
@@ -10,7 +9,7 @@ export class RecordsService {
 
 
   async getAllRecords(recordsType: recordsType): Promise<Records> {
-    const data = await fetch(this.url + recordsType, {headers: {Authorization: `Discogs token=${TOKEN}`}});
+    const data = await fetch(this.url + recordsType, {headers: {Authorization: `Discogs token=ksGYKvdBpWQleGtuYiAGvrsKtZINWNBkQdQyaHqt`}});
     return (await data.json()) ?? {};
   }
 
