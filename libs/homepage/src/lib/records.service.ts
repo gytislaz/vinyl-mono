@@ -9,7 +9,7 @@ export class RecordsService {
 
 
   async getAllRecords(recordsType: recordsType): Promise<Records> {
-    const data = await fetch(this.url + recordsType, {headers: {Authorization: `Discogs token=ksGYKvdBpWQleGtuYiAGvrsKtZINWNBkQdQyaHqt`}});
+    const data = await fetch(this.url + recordsType + `?page=1&per_page=100`, {headers: {Authorization: `Discogs token=ksGYKvdBpWQleGtuYiAGvrsKtZINWNBkQdQyaHqt`}});
     return (await data.json()) ?? {};
   }
 
