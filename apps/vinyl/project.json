@@ -17,8 +17,8 @@
         "tsConfig": "apps/vinyl/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/vinyl/src/favicon.ico", "apps/vinyl/src/assets"],
-        "styles": ["apps/vinyl/src/styles.scss"],
-        "scripts": [],
+        "styles": ["apps/vinyl/src/styles.scss", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
+        "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
         "server": "apps/vinyl/src/main.server.ts",
         "prerender": true,
         "ssr": {
