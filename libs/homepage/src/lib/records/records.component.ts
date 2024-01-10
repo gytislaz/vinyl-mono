@@ -1,4 +1,9 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnChanges } from '@angular/core';
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  Component,
+  Input,
+  OnChanges,
+} from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Records, Release } from '../../types';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -17,7 +22,6 @@ export class RecordsComponent implements OnChanges {
   filteredReleases: Release[] | undefined;
   filterForm: FormGroup;
 
-
   constructor(private fb: FormBuilder) {
     this.filterForm = this.fb.group({
       filterValue: [''],
@@ -29,14 +33,13 @@ export class RecordsComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    this.filteredReleases = this.records.releases
-    this.filterForm.get('filterValue')?.setValue('')
+    this.filteredReleases = this.records.releases;
+    this.filterForm.get('filterValue')?.setValue('');
   }
 
   filterRecords(text?: string) {
     if (!text) {
       this.filteredReleases = this.records.releases;
-
     } else {
       this.filteredReleases = this.records?.releases?.filter(
         (release) =>
@@ -48,5 +51,14 @@ export class RecordsComponent implements OnChanges {
             .includes(text.toLowerCase())
       );
     }
+  }
+
+  fetchImage(imageURL?: string) {
+    return (
+      imageURL?.replace(
+        'https://i.discogs.com/',
+        'https://backend.gytislazauskas.lt/'
+      ) || ''
+    );
   }
 }

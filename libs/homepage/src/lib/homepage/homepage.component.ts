@@ -30,28 +30,10 @@ export class HomepageComponent {
       .getAllRecords(recordsType.COLLECTION)
       .then((records) => {
         this.collectionRecords = records;
-      })
+      });
   }
 
   changeType(newType: recordsType) {
     this.selectedType = newType;
   }
-
-
-  // filterRecords(text?: string) {
-  //   if (!text) {
-  //     this.filteredReleases = this.records.releases;
-  //     console.log('d', this.records.releases)
-  //   } else {
-  //     this.filteredReleases = this.records?.releases?.filter(
-  //       (release) =>
-  //         release?.basic_information.title
-  //           ?.toLowerCase()
-  //           .includes(text.toLowerCase()) ||
-  //         release?.basic_information.artists[0].name
-  //           ?.toLowerCase()
-  //           .includes(text.toLowerCase())
-  //     );
-  //   }
-  // }
 }

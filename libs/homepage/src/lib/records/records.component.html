@@ -2,10 +2,16 @@
   <h1 class="font-bold text-4xl">{{ pageTitle }}</h1>
 </div>
 
-<form [formGroup]="filterForm"  class="py-3 text-center container search-bar">
+<form [formGroup]="filterForm" class="py-3 text-center container search-bar">
   <div class="form-group has-search">
     <span class="fa fa-search form-control-feedback"></span>
-    <input  #filter formControlName="filterValue" type="text" class="form-control" placeholder="Search">
+    <input
+      #filter
+      formControlName="filterValue"
+      type="text"
+      class="form-control"
+      placeholder="Search"
+    />
   </div>
 </form>
 
@@ -19,7 +25,7 @@
     >
       <div class="card shadow-sm rounded-1">
         <img
-          [ngSrc]="release.basic_information.cover_image || ''"
+          [ngSrc]="fetchImage(release.basic_information.cover_image)"
           [alt]="release.basic_information.title"
           role="img"
           width="40"
